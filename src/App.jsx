@@ -1,18 +1,21 @@
 import React from "react";
 import "./App.scss";
-import { auth, signInWithGoogle } from "./services/firebase/firebase-config";
+import AddPost from "./components/AddPost";
+import ListPosts from "./components/ListPosts";
 
 function App() {
-  const [user, setUser] = React.useState({});
-
-  React.useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      console.log(user);
-    });
-  }, []);
   return (
-    <div className="App">
-      <button onClick={signInWithGoogle}>sign-in with google</button>
+    <div className="w-full h-screen">
+      <header className="w-full h-16 bg-gray-700 p-5">
+        <h3 className="text-white text-center">
+          Firebase Firestore with ReactJs
+        </h3>
+      </header>
+      <main className="flex flex-col content-center p-5">
+        <ListPosts />
+        <hr className="my-5" />
+        <AddPost />
+      </main>
     </div>
   );
 }
