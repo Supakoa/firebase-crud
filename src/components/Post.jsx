@@ -1,6 +1,5 @@
 import React from "react";
-import { addDoc, updateDoc, deleteDoc, doc } from "firebase/firestore";
-import { postsCollectionRef } from "../lib/firebase.collection";
+import { updateDoc, deleteDoc, doc } from "firebase/firestore";
 import { dbStore } from "../lib/firebase.init";
 
 const btn =
